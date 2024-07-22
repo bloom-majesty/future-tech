@@ -40,9 +40,17 @@ export default function Router() {
         { path: 'contact-us', element: <Contact /> },
         { path: 'faqs', element: <Faqs /> },
         { path: 'consulting', element: <Consulting /> },
-        { path: 'guidance', element: <Guidance /> },
+        // { path: 'guidance', element: <Guidance /> },
         { path: 'scholarship', element: <Scholarship /> },
         { path: 'tution', element: <Tution /> },
+        { path: 'engineering', element: <Engineering /> },
+        { path: 'medical', element: <Medical /> },
+        { path: 'Arts-and-Science', element: <Arts /> },
+        { path: 'Polytechnic', element: <Polytechnic /> },
+        { path: 'Design-and-Creativity', element: <Design /> },
+        { path: 'Business-Management', element: <Business /> },
+        { path: 'Agricultural-Sciences', element: <Agricultural /> },
+        { path: 'Emerging-Tech', element: <Emerging /> },
       ],
     },
   ]);
@@ -52,7 +60,15 @@ const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
 const About = Loadable(lazy(() => import('../pages/About')));
 const Contact = Loadable(lazy(() => import('../pages/Contact')));
 const Consulting = Loadable(lazy(() => import('../pages/Consulting')));
-const Guidance = Loadable(lazy(()=>import('../pages/Guidance')));
+// const Guidance = Loadable(lazy(()=>import('../pages/Guidance')));
 const Scholarship = Loadable(lazy(()=> import('../pages/Scholarship')));
 const Tution  = Loadable(lazy(()=>import('../pages/Tution')));
 const Faqs = Loadable(lazy(() => import('../pages/Faqs')));
+const Engineering = Loadable(lazy(() => import('../pages/engineering')));
+const Medical = Loadable(lazy(() => import('../pages/medical')));
+const Arts = Loadable(lazy(() => import('../pages/arts')));
+const Polytechnic = Loadable(lazy(() => import('../pages/polytechnic')));
+const Design = Loadable(lazy(() => import('../pages/design')));
+const Business = Loadable(lazy(() => import('../pages/business')));
+const Agricultural = Loadable(lazy(() => import('../pages/agricultural')));
+const Emerging = Loadable(lazy(() => import('../pages/emerging')));

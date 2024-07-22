@@ -1,51 +1,49 @@
 import PropTypes from 'prop-types';
-import { Icon } from '@iconify/react';
-import roundArrowRightAlt from '@iconify/icons-ic/round-arrow-right-alt';
-// material
+
 import { alpha, useTheme, styled } from '@mui/material';
-import { Box, Grid, Link, Paper, Rating, Container, Typography, useMediaQuery } from '@mui/material';
+import { Box, Grid, Paper, Rating, Container, Typography, useMediaQuery } from '@mui/material';
 //
-import { varFadeInUp, varFadeInLeft, MotionInView } from '../../animate';
+import { varFadeInUp, MotionInView } from '../../animate';
 import { MHidden } from '../../@material-extend';
 
 // ----------------------------------------------------------------------
 
 const TESTIMONIALS = [
   {
-    name: 'Jenny Wilson',
+    name: 'Ragul A',
     rating: 5,
     dateCreate: 'April 19, 2021',
     content: `Excellent Work! Thanks a lot!`
   },
   {
-    name: 'Cody Fisher',
+    name: 'Priya R',
     rating: 5,
     dateCreate: 'April 19, 2021',
-    content: `It's a very good dashboard and we are really liking the product . We've done some things, like migrate to TS and implementing a react useContext api, to fit our job methodology but the product is one of the best in terms of design and application architecture. The team did a really good job.`
+    content: `Future Tech Educational Consultancy's expert guidance secured my spot in a top Tamil Nadu college with an affordable fee structure. Their personalized counseling and invaluable scholarship assistance made all the difference.`
   },
   {
-    name: 'Marvin McKinney',
+    name: 'Kavin R',
     rating: 5,
     dateCreate: 'April 19, 2021',
-    content: `Customer support is realy fast and helpful the desgin of this theme is looks amazing also the code is very clean and readble realy good job !`
+    content: `Future Tech Educational Consultancy helped me secure admission to my dream college with exceptional support and guidance!`
   },
   {
-    name: 'Darrell Steward',
+    name: 'Subha sri K',
     rating: 5,
     dateCreate: 'April 19, 2021',
-    content: `Amazing, really good code quality and gives you a lot of examples for implementations.`
+    content: `Future Tech Educational Consultancy's expert guidance and support ensured my admission to a top Tamil Nadu college, with invaluable counseling and scholarship assistance.`
   },
   {
-    name: 'Jacob Jones',
+    name: 'Jeeva S',
     rating: 5,
     dateCreate: 'April 19, 2021',
-    content: `Got a few questions after purchasing the product. The owner responded very fast and very helpfull. Overall the code is excellent and works very good. 5/5 stars!`
+    content: `Future Tech Educational Consultancy played a crucial role in securing my admission to a top Tamil Nadu college, offering invaluable personalized counseling and scholarship support.`
   },
   {
-    name: 'Bessie Cooper',
+    name: 'Janani S',
     rating: 5,
     dateCreate: 'April 19, 2021',
-    content: `CEO of Codealy.io here. We’ve built a developer assessment platform that makes sense - tasks are based on git repositories and run in virtual machines. We automate the pain points - storing candidates code, running it and sharing test results with the whole team, remotely. Bought this template as we need to provide an awesome dashboard for our early customers. I am super happy with purchase. The code is just as good as the design. Thanks!`
+    content: `Thanks to Future Tech Educational Consultancy, I secured admission in a top Tamil Nadu college with affordable fees. Their personalized counseling and scholarship assistance were invaluable.`
   }
 ];
 
@@ -71,14 +69,7 @@ TestimonialCard.propTypes = {
   testimonial: PropTypes.object
 };
 
-function TestimonialLink() {
-  return (
-    <Link href="#" variant="subtitle2" sx={{ display: 'flex', alignItems: 'center' }}>
-      Read more testimonials
-      <Box component={Icon} icon={roundArrowRightAlt} sx={{ ml: 1, width: 20, height: 20 }} />
-    </Link>
-  );
-}
+
 
 function TestimonialCard({ testimonial }) {
   const { name, rating, dateCreate, content } = testimonial;
@@ -131,26 +122,18 @@ export default function AboutTestimonials() {
 
               <MotionInView variants={varFadeInUp}>
                 <Typography variant="h2" sx={{ mb: 3, color: 'common.white' }}>
-                  Who love <br />
-                  my work
+                Hear from Our  <br />
+                Students
                 </Typography>
               </MotionInView>
 
               <MotionInView variants={varFadeInUp}>
                 <Typography sx={{ color: 'common.white' }}>
-                  Our goal is to create a product and service that you’re satisfied with and use it every day. This is
-                  why we’re constantly working on our services to make it better every day and really listen to what our
-                  users has to say.
+                Future Tech Educational Consultancy transformed my educational journey with their expert guidance and unwavering support. I owe my success to their personalized counseling and invaluable assistance.
                 </Typography>
               </MotionInView>
 
-              <MHidden width="mdUp">
-                <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
-                  <MotionInView variants={varFadeInUp}>
-                    <TestimonialLink />
-                  </MotionInView>
-                </Box>
-              </MHidden>
+            
             </Box>
           </Grid>
 
@@ -183,14 +166,6 @@ export default function AboutTestimonials() {
             </Grid>
           </Grid>
         </Grid>
-
-        <MHidden width="mdDown">
-          <Box sx={{ bottom: 60, position: 'absolute' }}>
-            <MotionInView variants={varFadeInLeft}>
-              <TestimonialLink />
-            </MotionInView>
-          </Box>
-        </MHidden>
       </Container>
     </RootStyle>
   );

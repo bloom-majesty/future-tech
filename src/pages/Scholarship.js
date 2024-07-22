@@ -3,7 +3,7 @@ import { styled } from '@mui/material';
 import {  Container, Typography } from '@mui/material';
 // components
 import Page from '../components/Page';
-import { ScholarshipHero, ScholarshipCategory, ScholarshipList} from '../components/_external-pages/Scholarship';
+import { ScholarshipHero,ScholarshipElements,ScholarshipList} from '../components/_external-pages/Scholarship';
 
 // ----------------------------------------------------------------------
 
@@ -20,10 +20,10 @@ export default function Scholarship() {
   return (
     <RootStyle title="Scholarship | Minimal-UI">
       <ScholarshipHero />
+      <ScholarshipElements />
       <Container sx={{ mt: 15, mb: 10 }}>
-        <ScholarshipCategory />
         <Typography variant="h3" sx={{ mb: 5 }}>
-          Frequently asked questions
+        Why Choose Us
         </Typography>
             <ScholarshipList />
       </Container>

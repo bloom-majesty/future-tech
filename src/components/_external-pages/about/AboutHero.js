@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
-// material
 import { styled } from '@mui/material';
 import { Box, Container, Typography } from '@mui/material';
-//
+
 import { varWrapEnter, varFadeInRight, TextAnimate } from '../../animate';
 
-// ----------------------------------------------------------------------
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   backgroundSize: 'cover',
@@ -27,7 +25,6 @@ const ContentStyle = styled('div')(({ theme }) => ({
   }
 }));
 
-// ----------------------------------------------------------------------
 
 export default function AboutHero() {
   return (
@@ -50,8 +47,8 @@ export default function AboutHero() {
                 fontWeight: 'fontWeightMedium'
               }}
             >
-              Let's work together and
-              <br /> make awesome site easily
+              Delivering Tomorrow's 
+              <br /> Guidance Today!
             </Typography>
           </motion.div>
         </ContentStyle>

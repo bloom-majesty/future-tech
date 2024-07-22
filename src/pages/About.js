@@ -5,8 +5,6 @@ import { Divider } from '@mui/material';
 import Page from '../components/Page';
 import { AboutHero, AboutTeam, AboutVision, AboutTestimonials } from '../components/_external-pages/about';
 
-// ----------------------------------------------------------------------
-
 const RootStyle = styled(Page)(({ theme }) => ({
   paddingTop: theme.spacing(8),
   [theme.breakpoints.up('md')]: {
@@ -14,11 +12,9 @@ const RootStyle = styled(Page)(({ theme }) => ({
   }
 }));
 
-// ----------------------------------------------------------------------
-
 export default function About() {
   return (
-    <RootStyle title="About us | Minimal-UI">
+    <RootStyle title="About us">
       <AboutHero />
       <AboutVision />
       <Divider orientation="vertical" sx={{ my: 10, mx: 'auto', width: 2, height: 40 }} />

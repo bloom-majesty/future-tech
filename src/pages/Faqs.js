@@ -1,9 +1,9 @@
 // material
 import { styled } from '@mui/material';
-import {  Container, Typography } from '@mui/material';
+import { Grid, Container, Typography } from '@mui/material';
 // components
 import Page from '../components/Page';
-import { FaqsHero, FaqsCategory, FaqsList} from '../components/_external-pages/faqs';
+import { FaqsHero, FaqsCategory, FaqsList, FaqsForm } from '../components/_external-pages/faqs';
 
 // ----------------------------------------------------------------------
 
@@ -20,14 +20,23 @@ export default function Faqs() {
   return (
     <RootStyle title="Faqs | Minimal-UI">
       <FaqsHero />
+
       <Container sx={{ mt: 15, mb: 10 }}>
         <FaqsCategory />
+
         <Typography variant="h3" sx={{ mb: 5 }}>
           Frequently asked questions
         </Typography>
-            <FaqsList />
-      </Container>
 
+        <Grid container spacing={10}>
+          <Grid item xs={12} md={6}>
+            <FaqsList />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <FaqsForm />
+          </Grid>
+        </Grid>
+      </Container>
     </RootStyle>
   );
 }
