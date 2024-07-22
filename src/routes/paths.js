@@ -22,14 +22,22 @@ export const PATH_PAGE = {
   comingSoon: '/coming-soon',
   maintenance: '/maintenance',
   consulting:'/consulting',
-  guidance:'guidance',
   scholarship:'scholarship',
   tution:'tution',
   about: '/about-us',
   contact: '/contact-us',
+  engineering:"/engineering",
+  medical:"/medical",
+  Arts:"/Arts-and-Science",
+  Polytechnic:"/Polytechnic",
+  Design:"/Design-and-Creativity",
+  Business:"/Business-Management",
+  Agricultural:"/Agricultural-Sciences",
+  Emerging:"/Emerging-Tech",
   faqs: '/faqs',
   page404: '/404',
   page500: '/500',
+
 };
 
 export const PATH_DASHBOARD = {
@@ -81,4 +89,4 @@ export const PATH_DASHBOARD = {
   }
 };
 
-export const PATH_DOCS = '';
+export const PATH_DOCS = '' ;

@@ -3,7 +3,7 @@ import { styled } from '@mui/material';
 import {  Container, Typography } from '@mui/material';
 // components
 import Page from '../components/Page';
-import { ConsultingHero, ConsultingCategory, ConsultingList} from '../components/_external-pages/Consulting';
+import { ConsultingHero,ConsultingService, ConsultingList} from '../components/_external-pages/Consulting';
 
 // ----------------------------------------------------------------------
 
@@ -21,9 +21,12 @@ export default function Consulting() {
     <RootStyle title="Consulting | Minimal-UI">
       <ConsultingHero />
       <Container sx={{ mt: 15, mb: 10 }}>
-        <ConsultingCategory />
-        <Typography variant="h3" sx={{ mb: 5 }}>
-          Frequently asked questions
+        <ConsultingService/>
+        <Typography variant="h3" sx={{ mb: 3 }}>
+        How Can We Help You?
+        </Typography>
+        <Typography variant="p" sx={{ mb: 10 }}>
+        At Future Tech Educational Consultancy, our consulting services are designed to assist you in navigating your educational and career goals effectively. Here’s how we can support you:
         </Typography>
             <ConsultingList />
       </Container>

@@ -16,7 +16,7 @@ export default function AboutVision() {
           overflow: 'hidden'
         }}
       >
-        <img src="/static/about/vision.jpg" alt="about-vision" />
+        <img src="/static/about/vision.webp" alt="about-vision" style={{width:"100%"}}/>
 
         <Box
           sx={{
@@ -29,18 +29,6 @@ export default function AboutVision() {
             justifyContent: 'center'
           }}
         >
-          {['logo_amazon', 'logo_hbo', 'logo_ibm', 'logo_lya', 'logo_spotify', 'logo_netflix'].map((logo) => (
-            <MotionInView key={logo} variants={varFadeIn}>
-              <Box
-                component="img"
-                src={`/static/about/${logo}.svg`}
-                sx={{
-                  m: { xs: 1.5, md: 3 },
-                  height: { xs: 24, md: 32 }
-                }}
-              />
-            </MotionInView>
-          ))}
         </Box>
       </Box>
 
@@ -48,7 +36,7 @@ export default function AboutVision() {
         <Grid item xs={12} sm={8}>
           <MotionInView variants={varFadeInUp}>
             <Typography variant="h3" sx={{ textAlign: 'center' }}>
-              Our vision offering the best product nulla vehicula tortor scelerisque ultrices malesuada.
+            Education is the passport to the future, for tomorrow belongs to those who prepare for it today.
             </Typography>
           </MotionInView>
         </Grid>

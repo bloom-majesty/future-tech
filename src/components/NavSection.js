@@ -1,70 +1,60 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import { Icon } from "@iconify/react";
-import {
-  NavLink as RouterLink,
-  matchPath,
-  useLocation,
-} from "react-router-dom";
-import arrowIosForwardFill from "@iconify/icons-eva/arrow-ios-forward-fill";
-import arrowIosDownwardFill from "@iconify/icons-eva/arrow-ios-downward-fill";
-import { alpha, styled, useTheme } from "@mui/system";
-import {
-  Box,
-  List,
-  Collapse,
-  ListItemText,
-  ListItemIcon,
-  ListSubheader,
-  ListItemButton,
-} from "@mui/material";
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Icon } from '@iconify/react';
+import { NavLink as RouterLink, matchPath, useLocation } from 'react-router-dom';
+import arrowIosForwardFill from '@iconify/icons-eva/arrow-ios-forward-fill';
+import arrowIosDownwardFill from '@iconify/icons-eva/arrow-ios-downward-fill';
+// material
+import { alpha, useTheme, styled } from '@mui/material';
+import { Box, List, Collapse, ListItemText, ListItemIcon, ListSubheader, ListItemButton } from '@mui/material';
+import navConfig from "../layouts/main/MenuConfig";
 
-const ListSubheaderStyle = styled((props) => (
-  <ListSubheader disableSticky disableGutters {...props} />
-))(({ theme }) => ({
-  ...theme.typography.overline,
-  marginTop: theme.spacing(3),
-  marginBottom: theme.spacing(2),
-  paddingLeft: theme.spacing(5),
-  color: theme.palette.text.primary,
-}));
+const ListSubheaderStyle = styled((props) => <ListSubheader disableSticky disableGutters {...props} />)(
+  ({ theme }) => ({
+    ...theme.typography.overline,
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(2),
+    paddingLeft: theme.spacing(5),
+    color: theme.palette.text.primary
+  })
+);
 
-const ListItemStyle = styled((props) => (
-  <ListItemButton disableGutters {...props} />
-))(({ theme }) => ({
+const ListItemStyle = styled((props) => <ListItemButton disableGutters {...props} />)(({ theme }) => ({
   ...theme.typography.body2,
   height: 48,
-  position: "relative",
-  textTransform: "capitalize",
+  position: 'relative',
+  textTransform: 'capitalize',
   paddingLeft: theme.spacing(5),
   paddingRight: theme.spacing(2.5),
   color: theme.palette.text.secondary,
-  "&:before": {
+  '&:before': {
     top: 0,
     right: 0,
     width: 3,
     bottom: 0,
     content: "''",
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
     borderTopLeftRadius: 4,
     borderBottomLeftRadius: 4,
-    backgroundColor: theme.palette.primary.main,
-  },
+    backgroundColor: theme.palette.primary.main
+  }
 }));
 
 const ListItemIconStyle = styled(ListItemIcon)({
   width: 22,
   height: 22,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
 });
+
+// ----------------------------------------------------------------------
 
 NavItem.propTypes = {
   active: PropTypes.func,
   isShow: PropTypes.bool,
-  item: PropTypes.object,
+  item: PropTypes.object
 };
 
 function NavItem({ item, active, isShow }) {
@@ -78,18 +68,15 @@ function NavItem({ item, active, isShow }) {
   };
 
   const activeRootStyle = {
-    color: "primary.main",
-    fontWeight: "fontWeightMedium",
-    bgcolor: alpha(
-      theme.palette.primary.main,
-      theme.palette.action.selectedOpacity
-    ),
-    "&:before": { display: "block" },
+    color: 'primary.main',
+    fontWeight: 'fontWeightMedium',
+    bgcolor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+    '&:before': { display: 'block' }
   };
 
   const activeSubStyle = {
-    color: "text.primary",
-    fontWeight: "fontWeightMedium",
+    color: 'text.primary',
+    fontWeight: 'fontWeightMedium'
   };
 
   if (children) {
@@ -98,7 +85,7 @@ function NavItem({ item, active, isShow }) {
         <ListItemStyle
           onClick={handleOpen}
           sx={{
-            ...(isActiveRoot && activeRootStyle),
+            ...(isActiveRoot && activeRootStyle)
           }}
         >
           <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
@@ -119,8 +106,8 @@ function NavItem({ item, active, isShow }) {
         {isShow && (
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {children.map((item) => {
-                const { title, path } = item;
+              {children.map((childItem) => {
+                const { title, path } = childItem;
                 const isActiveSub = active(path);
 
                 return (
@@ -129,7 +116,7 @@ function NavItem({ item, active, isShow }) {
                     component={RouterLink}
                     to={path}
                     sx={{
-                      ...(isActiveSub && activeSubStyle),
+                      ...(isActiveSub && activeSubStyle)
                     }}
                   >
                     <ListItemIconStyle>
@@ -138,17 +125,16 @@ function NavItem({ item, active, isShow }) {
                         sx={{
                           width: 4,
                           height: 4,
-                          display: "flex",
-                          borderRadius: "50%",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          bgcolor: "text.disabled",
-                          transition: (theme) =>
-                            theme.transitions.create("transform"),
+                          display: 'flex',
+                          borderRadius: '50%',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          bgcolor: 'text.disabled',
+                          transition: (theme) => theme.transitions.create('transform'),
                           ...(isActiveSub && {
-                            transform: "scale(2)",
-                            bgcolor: "primary.main",
-                          }),
+                            transform: 'scale(2)',
+                            bgcolor: 'primary.main'
+                          })
                         }}
                       />
                     </ListItemIconStyle>
@@ -168,7 +154,7 @@ function NavItem({ item, active, isShow }) {
       component={RouterLink}
       to={path}
       sx={{
-        ...(isActiveRoot && activeRootStyle),
+        ...(isActiveRoot && activeRootStyle)
       }}
     >
       <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
@@ -184,28 +170,26 @@ function NavItem({ item, active, isShow }) {
 
 NavSection.propTypes = {
   isShow: PropTypes.bool,
-  navConfig: PropTypes.array,
+  navConfig: PropTypes.array
 };
 
-export default function NavSection({ navConfig, isShow = true, ...other }) {
+NavSection.defaultProps = {
+  navConfig: []
+};
+
+export default function NavSection({ navConfig = [], isShow = true, ...other }) {
   const { pathname } = useLocation();
-  const match = (path) =>
-    path ? !!matchPath({ path, end: false }, pathname) : false;
+  const match = (path) => (path ? !!matchPath({ path, end: false }, pathname) : false);
 
   return (
     <Box {...other}>
-      {navConfig.map((list) => {
-        const { subheader, items } = list;
+      {(navConfig || []).map((list) => {
+        const { subheader, items = [] } = list;
         return (
-          <List key={subheader} disablePadding>
+          <List key={subheader || Math.random()} disablePadding>
             {isShow && <ListSubheaderStyle>{subheader}</ListSubheaderStyle>}
-            {items.map((item) => (
-              <NavItem
-                key={item.title}
-                item={item}
-                active={match}
-                isShow={isShow}
-              />
+            {(items || []).map((item) => (
+              <NavItem key={item.title} item={item} active={match} isShow={isShow} />
             ))}
           </List>
         );

@@ -11,7 +11,7 @@ import { varFadeInUp, TextAnimate, MotionInView, varWrapEnter, varFadeInRight } 
 
 const RootStyle = styled(motion.div)(({ theme }) => ({
   backgroundSize: 'cover',
-  backgroundImage: 'url(/static/overlay.svg), url(/static/faqs/hero.jpg)',
+  backgroundImage: 'url(/static/overlay.svg), url(/static/consulting/tutionHero.webp)',
   padding: theme.spacing(10, 0),
   [theme.breakpoints.up('md')]: {
     height: 560,
@@ -54,25 +54,14 @@ export default function TutionHero() {
     <RootStyle initial="initial" animate="animate" variants={varWrapEnter}>
       <Container maxWidth="lg" sx={{ position: 'relative', height: '100%' }}>
         <ContentStyle>
-          <TextAnimate text="How" sx={{ color: 'primary.main' }} variants={varFadeInRight} />
+          <TextAnimate text="Personalized " sx={{ color: 'primary.main' }} variants={varFadeInRight} />
           <br />
           <Box sx={{ display: 'inline-flex', color: 'common.white' }}>
-            <TextAnimate text="can" sx={{ mr: 2 }} />
-            <TextAnimate text="we" sx={{ mr: 2 }} />
-            <TextAnimate text="help" sx={{ mr: 2 }} />
-            <TextAnimate text="you?" />
-          </Box>
-
-          <MotionInView variants={varFadeInUp} sx={{ mt: 5 }}>
-            <SearchStyle
-              placeholder="Search support"
-              startAdornment={
-                <InputAdornment position="start">
-                  <Box component={Icon} icon={searchFill} sx={{ color: 'text.disabled' }} />
-                </InputAdornment>
-              }
-            />
-          </MotionInView>
+            <TextAnimate text="tutoring " sx={{ mr: 2 }} />
+            <TextAnimate text="for" sx={{ mr: 2 }} />
+            <TextAnimate text="academic" sx={{ mr: 2 }} />
+            <TextAnimate text="success"/>
+            </Box>
         </ContentStyle>
       </Container>
     </RootStyle>

@@ -6,8 +6,6 @@ import bookOpenFill from '@iconify/icons-eva/book-open-fill';
 // routes
 import {  PATH_DOCS, PATH_PAGE } from '../../routes/paths';
 
-// ----------------------------------------------------------------------
-
 const ICON_SIZE = {
   width: 22,
   height: 22
@@ -25,17 +23,36 @@ const menuConfig = [
     path: PATH_PAGE.about
   },
   {
-    title: 'Services',
+    title: 'Scholarship',
+    icon: <Icon icon={roundGrain} {...ICON_SIZE} />,
+    path: PATH_PAGE.scholarship
+  },
+  {
+    title: 'Tution',
+    icon: <Icon icon={roundGrain} {...ICON_SIZE} />,
+    path: PATH_PAGE.tution
+  },
+  {
+    title: 'Consulting',
+    icon: <Icon icon={roundGrain} {...ICON_SIZE} />,
+    path: PATH_PAGE.consulting
+  },
+  {
+    title: 'Courses',
     path: '/pages',
     icon: <Icon icon={fileFill} {...ICON_SIZE} />,
     children: [
       {
-        subheader: 'Other',
+        subheader: 'List of Course',
         items: [
-          { title: 'Consulting', path: PATH_PAGE.consulting },
-          { title: 'Tution', path: PATH_PAGE.tution },
-          { title: 'Guidance', path: PATH_PAGE.guidance },
-          { title: 'Scholarship', path: PATH_PAGE.scholarship },
+          { title: 'Engineering', path: PATH_PAGE.engineering },
+          { title: 'Medical', path: PATH_PAGE.medical },
+          { title: 'Arts and Science', path: PATH_PAGE.Arts },
+          { title: 'Polytechnic', path: PATH_PAGE.Polytechnic },
+          { title: 'Design and Creativity', path: PATH_PAGE.Design },
+          { title: 'Business Management', path: PATH_PAGE.Business },
+          { title: 'Agricultural Sciences', path: PATH_PAGE.Agricultural },
+          { title: 'Emerging Tech', path: PATH_PAGE.Emerging },
          
           
         ]
